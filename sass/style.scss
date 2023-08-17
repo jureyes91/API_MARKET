@@ -134,29 +134,32 @@ header{
     background-color: var(--color_light);
     max-height: 630px;
     padding: 100px 24px 24px;
-    box-sizing: border-box;
+    box-sizing: border-box;position: relative;
     &::before, &::after {
         content: '';
         position: absolute;
         width:100%;
-        max-width: 400px;
         z-index: 0;
         height: 100%;
-        max-height: 400PX;
+ 
     }
     &::before{
         left: 0;
-        top: 0;
-        background: url('../images/mask3.png') no-repeat center;
+        bottom: 0;
+        background: url('../images/mask3.svg') no-repeat;
         background-size: contain;
-        background-position: left;
+        background-position: left bottom;
+        max-height: 400px;
+        max-width: 400px;
     }
     &::after{
         right: 0;
         top: 0;
-        background: url('../images/mask4.png') no-repeat center;
+        background: url('../images/mask4.svg') no-repeat;
         background-size: contain;
-        background-position: right;
+        background-position: right top;
+        max-width: 470px;
+        max-height: 620PX;
     }
     h1{
         font-size: 32px;
@@ -239,7 +242,7 @@ header{
     }
     .container_center{
         width: 100%;
-        max-width: 600px;
+        max-width: 800px;
         display: flex;
         gap: 24px;
         flex-direction: column;
@@ -266,6 +269,7 @@ header{
             font-weight: 400;
             text-align: center;
             margin: 0;
+            max-width: 600px;
         }
 
     }
@@ -275,24 +279,56 @@ header{
         bottom: 0;
         left: 0;
         right: 0;
-        height: 40%;
-        animation-delay: 400ms;
-        padding: 0 60px;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        max-width: 1380px;
+        margin: 0 auto;
+        padding: 0 24px 24px;
         box-sizing: border-box;
+        animation-delay: 300ms;
+        .c_img{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            &:nth-child(1){
+                max-width: 216px;
+                animation-delay: 200ms;
+            }
+            &:nth-child(2){
+                max-width: 160px;
+                animation-delay: 300ms;
+            }
+            &:nth-child(3){
+                max-width: 292px;
+                animation-delay: 500ms;
+            }
+            &:nth-child(4){
+                max-width: 174px;
+                animation-delay: 600ms;
+            }
+            &:nth-child(5){
+                max-width: 217px;
+                animation-delay: 200ms;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: bottom;
+            }
+        }
         &::before{
             content: '';
             position: absolute;
             width: 100%;
-            height: 100%;
+            height: 14%;
+            bottom: 0;
             background: linear-gradient(to top, #21262E,rgba(33, 38, 46, 0));
             z-index: 1;
             mix-blend-mode: multiply;
-        }
-        img{
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: bottom;
         }
     }
 }
