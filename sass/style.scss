@@ -40,6 +40,9 @@ header{
 .center{
     text-align: center;
 }
+.left{
+    text-align: left;
+}
 .btn_light_outline, .btn_light{
     border-radius: 100px;
     border: 1px solid var(--color_light)!important;
@@ -345,6 +348,7 @@ header{
     align-items: center;
     padding: 60px 16px;
     box-sizing: border-box;
+
     h2{
         color: var(--txt_color_light);
         font-size: 42px;
@@ -355,7 +359,7 @@ header{
         position: absolute;
         width:100%;
         max-width: 600px;
-        z-index: 3;
+        z-index: 0;
         height: 100%;
         max-height: 500PX;
     }
@@ -375,24 +379,53 @@ header{
     }
 }
 
+.cont_funciona{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
 
-
-
-.cont_desc{
-    h2, .numeral, div{
-        color: var(--txt_color_light)!important;
-    }
+.tabs_funciona{
+    position: relative;
+    z-index: 2;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .slide{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap:40px;
-    align-items: center;
+    display: flex;
+    gap:16px;
+    align-items: flex-start;
     justify-content: center;
+    cursor: pointer;
+    margin: 0 0 40px;
+    transition: 300ms ease all;
+    width: 90%;
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 16px;
+    padding: 24px;
+    justify-content: flex-start;
+    .cont_desc{
+        color: var(--txt_color_light);
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .txt_funciona{
+        color: var(--txt_color_light);
+    }
     h3{
         color: var(--txt_color_light);
         font-size: 18px;
+        margin: 0;
     }
     .picture{
         max-width: 500px;
@@ -401,6 +434,52 @@ header{
             width: 100%;
             height: 100%;
             object-fit: contain;
+        }
+    }
+    .numeral{
+        background-color: #F4F6F7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+        box-sizing: border-box;
+        width: 24px;
+        height: 24px;
+        color: #4B5C6F;
+        border-radius: 100px;
+        transition: 300ms ease all;
+    }
+
+    &.active{
+        border: 1px solid #3BFAF8;
+        background-color: #343A45;
+        border-radius: 16px;
+        padding: 24px;
+        box-sizing: border-box;
+        transform: translateX(32px);
+        
+        .numeral{
+            background-color: #3BFAF8;
+            color: #008988;
+        }
+    }
+}
+
+.tabs_images_funciona{
+    .picture{
+        display: none;
+        width: 100%;
+        max-width: 500px;
+        opacity: 0;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            margin: auto;
+        }
+        &.active{
+            display: flex;
+            opacity: 1;
         }
     }
 }

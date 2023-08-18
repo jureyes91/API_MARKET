@@ -22,55 +22,57 @@ $(document).ready(function(){
         });
     }
 
+
+    function tabsFunciona(){
+
+        const buttonTab = document.querySelectorAll('.tabs_funciona .slide');
+        const textDesc = document.querySelectorAll('.tabs_funciona .slide .txt_funciona');
+        const contImages = document.querySelectorAll('.tabs_images_funciona .picture');
+        
+        let comparador = null;
+        
+        
+        $(buttonTab).click(function(){
+            
+
+            if($(this).hasClass('active')){
+
+                
+            }else{
+                $(buttonTab).removeClass('active');
+                $(textDesc).slideUp();
+                $(this).addClass('active');
+                $(this).find('.txt_funciona').slideDown();
+            }
+
+            
+           
+        })
+
+        buttonTab.forEach((pest) => {
+            
+            pest.addEventListener("click", (e) => {
+                buttonTab.forEach((el) => {
+                    el.classList.remove("active");
+                });
+                e.currentTarget.classList.toggle("active");
+                
+                comparador = pest.dataset.funciona;
+
+
+                contImages.forEach((infel) => {
+                    if(infel.dataset.funciona === comparador){
+                        infel.classList.add("active");
+                    }else{
+                        infel.classList.remove("active");
+                    } 
+                });
+            }); 
+        });
+    }
+
     menuMobile();
     textAnimation();
+    tabsFunciona();
 
 });
-
-
-// const intro = document.querySelector(".intro");
-// const video = intro.querySelector("video");
-// const text = intro.querySelector("h1");
-// //END SECTION
-// const section = document.querySelector("section");
-// const end = section.querySelector("h1");
-
-// //SCROLLMAGIC
-// const controller = new ScrollMagic.Controller();
-
-// //Scenes
-// let scene = new ScrollMagic.Scene({
-//   duration: 9000,
-//   triggerElement: intro,
-//   triggerHook: 0
-// })
-//   .addIndicators()
-//   .setPin(intro)
-//   .addTo(controller);
-
-// //Text Animation
-
-
-// setInterval(() => {
-//   delay += (scrollpos - delay) * accelamount;
-//   console.log(scrollpos, delay);
-
-//   video.currentTime = delay;
-// }, 33.3);
-// function toggleMute() {
-
-//     var video=document.getElementById("videoId");
-  
-//     if(video.muted){
-//       video.muted = false;
-//     } else {
-//       debugger;
-//       video.muted = true;
-//       video.play()
-//     }
-  
-//   }
-  
-//   $(document).ready(function(){
-//     setTimeout(toggleMute,3000);
-//   })
