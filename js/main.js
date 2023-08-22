@@ -39,15 +39,14 @@ $(document).ready(function(){
 
                 
             }else{
-                $(buttonTab).removeClass('active');
                 $(textDesc).slideUp();
+                $(buttonTab).removeClass('active');
                 $(this).addClass('active');
                 $(this).find('.txt_funciona').slideDown();
             }
+        });
 
-            
-           
-        })
+
 
         buttonTab.forEach((pest) => {
             
@@ -71,8 +70,64 @@ $(document).ready(function(){
         });
     }
 
+
+
+    // TABS SOLUCIONES
+
+
+    function tabsSoluciones(){
+
+        const buttonTab = document.querySelectorAll('.cont_soluciones .nav_tabs ul li');
+        const containerSoluciones = document.querySelectorAll('.cont_soluciones .c_soluciones');
+        
+        let comparador = null;
+        
+        // TAB
+        
+        $(buttonTab).click(function(){
+            if($(this).hasClass('active')){
+
+                
+            }else{
+                // $(textDesc).slideUp();
+                $(buttonTab).removeClass('active');
+                $(this).addClass('active');
+                // $(this).find('.txt_funciona').slideDown();
+            }
+        });
+
+        // CONTAINER
+
+        buttonTab.forEach((pest) => {
+            
+            pest.addEventListener("click", (e) => {
+                buttonTab.forEach((el) => {
+                    el.classList.remove("active");
+                });
+                
+                e.currentTarget.classList.toggle("active");
+                
+                comparador = pest.dataset.tabs;
+
+                containerSoluciones.forEach((infel) => {
+                    if(infel.dataset.tabs === comparador){
+                        infel.classList.add("active");
+                    }else{
+                        infel.classList.remove("active");
+                    } 
+                });
+            }); 
+        });
+    }
+
+
+
+
+
+
     menuMobile();
     textAnimation();
     tabsFunciona();
+    tabsSoluciones();
 
 });
