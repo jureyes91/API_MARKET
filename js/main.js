@@ -92,9 +92,12 @@ $(document).ready(function(){
                 // $(textDesc).slideUp();
                 $(buttonTab).removeClass('active');
                 $(this).addClass('active');
+                $('.grand_container').find('video').trigger('play');
                 // $(this).find('.txt_funciona').slideDown();
             }
         });
+
+
 
         // CONTAINER
 
@@ -114,7 +117,7 @@ $(document).ready(function(){
                         infel.classList.add("active");
                     }else{
                         infel.classList.remove("active");
-                        
+                      
                     } 
                 });
             }); 
