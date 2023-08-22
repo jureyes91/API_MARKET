@@ -328,12 +328,17 @@ header {
   mix-blend-mode: multiply;
 }
 
+.s_soluciones {
+  padding: 80px 16px;
+  box-sizing: border-box;
+}
 .s_soluciones .container {
   max-width: 944px;
 }
 .s_soluciones h2 {
   font-size: 42px;
   font-weight: 600;
+  margin: 0;
 }
 
 .cont_soluciones .nav_tabs {
@@ -404,25 +409,34 @@ header {
   color: #404040;
   font-weight: 600;
 }
+.cont_soluciones .grand_container {
+  position: relative;
+}
 .cont_soluciones .c_soluciones {
   background-color: #FFFFFF;
   padding: 40px;
   border-radius: 16px;
-  max-height: 362px;
-  display: flex;
+  max-height: 392px;
   align-items: center;
   justify-content: center;
-  display: none;
+  display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+  top: 0;
+  position: absolute;
+  transition: 300ms ease all;
 }
 .cont_soluciones .c_soluciones.active {
   display: grid;
+  z-index: 2;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 40px -10px rgba(0, 0, 0, 0.1215686275);
 }
 .cont_soluciones .c_soluciones .col {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 .cont_soluciones .c_soluciones .col h3 {
   font-size: 28px;
@@ -431,17 +445,62 @@ header {
 }
 .cont_soluciones .c_soluciones .col ul {
   padding: 0;
+  margin: 0;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+}
+.cont_soluciones .c_soluciones .col ul li {
+  height: 24px;
+  position: relative;
+  margin: 0 0 0 24px;
+}
+.cont_soluciones .c_soluciones .col ul li::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  background: url("../images/leimotive.svg") no-repeat center;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
 }
 .cont_soluciones .c_soluciones picture {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.cont_soluciones .c_soluciones picture .video {
+.cont_soluciones .c_soluciones picture video {
   width: 100%;
+  max-width: 280px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+.cont_soluciones .c_soluciones:nth-child(1) {
+  transform: scale(0.9) translateY(-16px);
+}
+.cont_soluciones .c_soluciones:nth-child(1).active {
+  transform: scale(1) translateY(16px);
+}
+.cont_soluciones .c_soluciones:nth-child(2) {
+  transform: scale(0.9) translateY(-16px);
+}
+.cont_soluciones .c_soluciones:nth-child(2).active {
+  transform: scale(1) translateY(16px);
+}
+.cont_soluciones .c_soluciones:nth-child(3) {
+  transform: scale(0.9) translateY(-16px);
+}
+.cont_soluciones .c_soluciones:nth-child(3).active {
+  transform: scale(1) translateY(16px);
+}
+.cont_soluciones .c_soluciones:nth-child(4) {
+  transform: scale(0.9) translateY(-16px);
+}
+.cont_soluciones .c_soluciones:nth-child(4).active {
+  transform: scale(1) translateY(16px);
 }
 
 .s_funciona {

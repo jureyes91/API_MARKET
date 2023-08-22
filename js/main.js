@@ -114,6 +114,7 @@ $(document).ready(function(){
                         infel.classList.add("active");
                     }else{
                         infel.classList.remove("active");
+                        
                     } 
                 });
             }); 

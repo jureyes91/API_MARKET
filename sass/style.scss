@@ -343,12 +343,15 @@ header{
 // SECCION SOLUCIONES
 
 .s_soluciones{
+    padding: 80px 16px;
+    box-sizing: border-box;
     .container{
         max-width: 944px;
     }
     h2{
         font-size: 42px;
         font-weight: 600;
+        margin: 0;
     }
 }
 .cont_soluciones{
@@ -431,24 +434,34 @@ header{
             }
         }
     }
+
+    .grand_container{
+        position: relative;
+    }
     .c_soluciones{
         background-color: #FFFFFF;
         padding: 40px;
         border-radius: 16px;
-        max-height: 362px;
-        display: flex;
+        max-height: 392px;
         align-items: center;
         justify-content: center;
-        display: none;
+        display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 24px;
+        top: 0;
+        position: absolute;
+        transition: 300ms ease all;
         &.active{
             display: grid;
+            z-index: 2;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 40px -10px #0000001f;
         }
         .col{
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 16px;
             h3{
                 font-size: 28px;
                 font-weight: 600;
@@ -456,16 +469,62 @@ header{
             }
             ul{
                 padding: 0;
+                margin: 0;
                 list-style: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 16px;
+                li{
+                    height: 24px;
+                    position: relative;
+                    margin: 0 0 0 24px;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        left: -24px;
+                        background: url('../images/leimotive.svg')no-repeat center;
+                        background-size: contain;
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
             }
         }
         picture{
             display: flex;
             align-items: center;
             justify-content: center;
-            .video{
+            video{
                 width: 100%;
+                max-width: 280px;
                 object-fit: contain;
+            }
+        }
+        &:nth-child(1){
+            transform: scale(.9) translateY(-16px);
+            &.active{
+                transform: scale(1) translateY(16px);     
+            }
+        }
+        &:nth-child(2){
+            transform: scale(.9) translateY(-16px);
+            &.active{
+                transform: scale(1) translateY(16px);
+
+            }
+        }
+        &:nth-child(3){
+            transform: scale(.9) translateY(-16px);
+            &.active{
+                transform: scale(1) translateY(16px);
+            }
+        }
+        &:nth-child(4){
+            transform: scale(.9) translateY(-16px);
+            &.active{
+                transform: scale(1) translateY(16px);
             }
         }
     }
