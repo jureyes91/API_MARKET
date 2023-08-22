@@ -1,11 +1,14 @@
 $(document).ready(function(){
 
+    // MENU MOBILE
+
     function menuMobile(){
         $(".menu_mobile").click(function(){
             $('.navbar').toggleClass("activeMobile");
         });
     }
 
+    // ANIMACIÓN HERO SECTION
 
     function textAnimation(){
         var TEXTS = ["con soluciones financieras", "con diferentes opciones de pago", "de manera fácil y segura"];
@@ -22,6 +25,7 @@ $(document).ready(function(){
         });
     }
 
+    // TABS DE SECCION FUNCIONA
 
     function tabsFunciona(){
 
@@ -124,9 +128,7 @@ $(document).ready(function(){
         });
     }
 
-
-
-    // FUNCION DE ANIMACION DE PARTES
+    // FUNCION DE ANIMACION DE PARTES - Is visible in viewport
 
 
     (function() {
@@ -155,10 +157,10 @@ $(document).ready(function(){
       
         init();
         checkPosition();
-      })();
+    })();
 
 
-    //   ANIMACIÓN TABS BARRA
+    //   ANIMACIÓN TABS BARRA - SECCION SOLUCIONES
 
     function animationBar(){
         
@@ -166,15 +168,7 @@ $(document).ready(function(){
         let tabClick2 = document.querySelectorAll('.st2');
         let tabClick3 = document.querySelectorAll('.st3');
         let tabClick4 = document.querySelectorAll('.st4');
-
         let barState = document.querySelectorAll('.nav_tabs ul');
-
-        // if($(barState).hasClass('st1', 'st2', 'st3', 'st4')){
-        //     $(this).removeClass('st1', 'st2', 'st3', 'st4')
-        // }else{
-        //     $(barState).addClass('st1');
-        // }
-
         
 
         $(tabClick1).click(function(){
@@ -215,6 +209,7 @@ $(document).ready(function(){
         });
     }
 
+    // ACTIVACION DE FUNCIONES
 
 
     menuMobile();
