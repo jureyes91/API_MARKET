@@ -158,6 +158,62 @@ $(document).ready(function(){
       })();
 
 
+    //   ANIMACIÓN TABS BARRA
+
+    function animationBar(){
+        
+        let tabClick1 = document.querySelectorAll('.st1');
+        let tabClick2 = document.querySelectorAll('.st2');
+        let tabClick3 = document.querySelectorAll('.st3');
+        let tabClick4 = document.querySelectorAll('.st4');
+
+        let barState = document.querySelectorAll('.nav_tabs ul');
+
+        // if($(barState).hasClass('st1', 'st2', 'st3', 'st4')){
+        //     $(this).removeClass('st1', 'st2', 'st3', 'st4')
+        // }else{
+        //     $(barState).addClass('st1');
+        // }
+
+        
+
+        $(tabClick1).click(function(){
+            if($(barState).hasClass('barState1')){
+                
+            }else{
+                $(barState).removeClass();
+                $(barState).addClass('barState1');
+
+            }
+        });
+        $(tabClick2).click(function(){
+            if($(barState).hasClass('barState2')){
+                
+            }else{
+                $(barState).removeClass();
+                $(barState).addClass('barState2');
+
+            }
+        });
+        $(tabClick3).click(function(){
+            if($(barState).hasClass('barState3')){
+                
+            }else{
+                $(barState).removeClass();
+                $(barState).addClass('barState3');
+
+            }
+        });
+        $(tabClick4).click(function(){
+            if($(barState).hasClass('barState4')){
+                
+            }else{
+                $(barState).removeClass();
+                $(barState).addClass('barState4');
+
+            }
+        });
+    }
 
 
 
@@ -165,5 +221,6 @@ $(document).ready(function(){
     textAnimation();
     tabsFunciona();
     tabsSoluciones();
+    animationBar();
 
 });

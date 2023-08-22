@@ -353,6 +353,7 @@ header {
   align-items: center;
   justify-content: center;
   position: relative;
+  transition: 300ms ease all;
 }
 .cont_soluciones .nav_tabs ul::before {
   content: "";
@@ -375,8 +376,20 @@ header {
   bottom: -9px;
   left: 0;
   z-index: 2;
-  border-radius: 100px;
   transform: translateX(0%);
+  transition: 300ms ease all;
+}
+.cont_soluciones .nav_tabs ul.barState1::after {
+  transform: translateX(0%);
+}
+.cont_soluciones .nav_tabs ul.barState2::after {
+  transform: translateX(100%);
+}
+.cont_soluciones .nav_tabs ul.barState3::after {
+  transform: translateX(200%);
+}
+.cont_soluciones .nav_tabs ul.barState4::after {
+  transform: translateX(300%);
 }
 .cont_soluciones .nav_tabs li {
   text-decoration: none;
