@@ -725,6 +725,7 @@ header{
     padding: 80px 16px;
     box-sizing: border-box;
     position: relative;
+    z-index: 1;
     &::before, &::after {
         content: '';
         position: absolute;
@@ -810,6 +811,8 @@ header{
     background-color: #F1F2F8;
     padding: 80px 16px;
     box-sizing: border-box;
+    position: relative;
+    z-index: 3;
 }
 .head_apis{
     display: flex;
