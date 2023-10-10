@@ -59,7 +59,13 @@
                     </a>
                 </aside>
                 <picture class="animate__animated animate__fadeInRight">
-                    <video autoplay muted loop id="videoId" src="images/hero_blanco.webm" type="video/webm"></video>
+                    <!-- <img src="images/hero_blanco.gif" width="500" height="500"> -->
+                    <video id="videoID" width="500" height="500" autoplay muted playsinline loop>
+                        <!-- <source src="images/hero_blanco.webm"> -->
+                        <source src="images/hero_blanco_h264_b.mp4">
+                        I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
+                        <!-- <source src="images/hero_blanco.ogv"> -->
+                    </video>
                 </picture>
             </div>
         </section>

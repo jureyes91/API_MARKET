@@ -9,6 +9,10 @@ $(document).ready(function(){
     }
 
     // ANIMACIÓN HERO SECTION
+    
+    function playVideo(){
+        $("#videoID").get(0).play();
+    }
 
     function textAnimation(){
         var TEXTS = ["con soluciones financieras", "con diferentes opciones de pago", "de manera fácil y segura"];
@@ -217,5 +221,6 @@ $(document).ready(function(){
     tabsFunciona();
     tabsSoluciones();
     animationBar();
+    playVideo();
 
 });
