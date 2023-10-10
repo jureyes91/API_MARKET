@@ -198,6 +198,10 @@ header {
   max-width: 500px;
 }
 
+picture.cnt_video_hero {
+  mix-blend-mode: multiply;
+}
+
 .s_hero_section_dark {
   background: #21262E;
   padding: 64px 24px;
