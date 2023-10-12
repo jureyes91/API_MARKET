@@ -154,8 +154,8 @@ header {
   background: url("../images/mask4.svg") no-repeat;
   background-size: contain;
   background-position: right top;
-  max-width: 470px;
-  max-height: 620PX;
+  max-width: 200px;
+  max-height: 300px;
 }
 .s_hero_section h1 {
   font-size: 32px;
